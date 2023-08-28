@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import { PrimeReactProvider } from './primereact/context';
 
-function App() {
+function App( Component, pageProps ) {
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +19,13 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+         <PrimeReactProvider>
+        <Component {...pageProps} />
+    </PrimeReactProvider>
+      </div>
     </div>
   );
-}
+}        
 
 export default App;
