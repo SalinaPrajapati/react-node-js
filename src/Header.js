@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
+import { Dialog } from 'primereact/dialog';
+import { InputText } from 'primereact/inputtext';
+
 
 function Header(){
     const [visible, setVisible] = useState(false);
@@ -16,7 +19,15 @@ function Header(){
                 <Button icon="pi pi-bars" severity="secondary" text style={{ fontSize: '0.75rem', color: 'white' }} raise onClick={() => setVisible(true)} />
             </div>
             <div>
-            <Button label="Sign Up" severity="secondary" text style={{ fontSize: '0.75rem', color: 'white' }} />
+            <Button label="Sign Up" severity="secondary" text style={{ fontSize: '0.75rem', color: 'white' }} onClick={() => setVisible(true)} />
+            <Dialog header="Header" visible={visible} style={{ width: '50vw' }} onHide={() => setVisible(false)}>
+            <p className="m-0">
+            <div className="flex flex-column gap-2">
+            <label htmlFor="username">Username</label>
+                <InputText id="username" aria-describedby="username-help" />
+            </div>
+            </p>
+            </Dialog>
             </div>
         </div>
     )
