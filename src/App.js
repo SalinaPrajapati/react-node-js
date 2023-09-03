@@ -1,22 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
 
-import { InputText } from 'primereact/inputtext'
-import { Button } from 'primereact/button';
-        
-import "primereact/resources/themes/lara-light-indigo/theme.css";     
-import "primereact/resources/primereact.min.css";  
-import 'primeicons/primeicons.css';                                     
+import './App.css';
+import Header from './Header'                                  
         
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <InputText />
-        <Button label="Check" icon="pi pi-check" />
-      </header>
+      <Header />
     </div>
   );
 }        
