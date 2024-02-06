@@ -1,14 +1,34 @@
+// App.js
+import React, { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import './App.css';
-import Header from './components/Header'                                  
-        
+
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <div className="App">
-      <Header />
+      <BrowserRouter>
+        <Header closeSidebar={closeSidebar} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* <Route path="/blog" element={<Blog />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/logout" element={<Logout />} /> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}        
+}
 
 export default App;
