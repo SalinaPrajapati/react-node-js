@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import { Button, Dialog, InputText, Card } from "../../primeReact";
 import pic from "../../assets/log-image.jpg";
-
 function LoginForm() {
   const [sign, setSign] = useState(false);
   const imageStyle = {
-    borderRadius: "5%"
+    borderRadius: "5%",
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <div></div>
-      <div  style={{ overflow:"hidden" }}>
+    <div className="font-link">
+      <div className="font-link" style={{ overflow: "hidden" }}>
         <Button
-          label="Sign Up"
+          label="Log In"
           severity="secondary"
           text
           style={{ fontSize: "0.75rem", color: "white" }}
@@ -21,58 +19,77 @@ function LoginForm() {
         />
         <Dialog
           visible={sign}
-          style={{ width: "50vw",paddingBottom:"0px" }}
+          modal
+          style={{ width: "60%", height: "100%", paddingBottom: "0px" }}
           onHide={() => setSign(false)}
         >
-          <p
+          <div
             className="m-0"
             style={{
-              display: "flex",
-              justifyContent: "space-between",
               position: "relative",
-              alignItems:"center",
+              left: "24px",
             }}
           >
             <div>
               <img
                 src={pic}
-                alt="My Image"
                 width="350"
-                height="450"
+                height="400"
                 style={imageStyle}
+                alt="Logo"
               />
             </div>
-            <Card
-              title="Login Please"
+            <div
               style={{
-                position: "absolute",
-                marginLeft: "300px",
-                marginTop: "20px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
               }}
             >
-              <div className="flex flex-column gap-2">
-                <label htmlFor="username">Username</label>
-                <InputText
-                  className="p-inputtext-sm"
-                  id="username"
-                  type="text"
-                  aria-describedby="username-help"
-                  style={{ marginLeft:"6px"}}
+              <Card
+                title="Register Please"
+                className="font-link"
+                style={{
+                  position: "absolute",
+                  top: "22px",
+                  right: "85px",
+                  width: "50%",
+                  height: "100%",
+                }}
+              >
+                <div className="font-link">
+                  <label htmlFor="username">Username</label>
+                  <br></br>
+                  <InputText
+                    className="p-inputtext-sm"
+                    id="username"
+                    type="text"
+                    aria-describedby="username-help"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+                <div className="font-link">
+                  <label htmlFor="Password">Password</label>
+                  <br></br>
+                  <InputText
+                    className="p-inputtext-sm"
+                    id="password"
+                    type="password"
+                    aria-describedby="password-help"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+                <Button
+                  style={{ marginTop: "10px" }}
+                  icon="pi pi-lock-open"
+                  label="Success"
+                  severity="success"
+                  size="small"
                 />
-              </div>
-              <div className="flex flex-column gap-2 mt-3">
-                <label htmlFor="Password">Password</label>
-                <InputText
-                  className="p-inputtext-sm"
-                  id="password"
-                  type="password"
-                  style={{marginBottom:"20px", marginTop:"20px", marginLeft:"8px"}}
-                  aria-describedby="password-help"
-                />
-              </div>
-              <Button icon="pi pi-lock-open" label="Success" severity="success" size="small" />
-            </Card>
-          </p>
+              </Card>
+            </div>
+          </div>
         </Dialog>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "primereact/card";
+
 const cards = [
   {
     name: "Home Decore",
@@ -22,13 +23,13 @@ const cards = [
     description: "321",
   },
 ];
-const colors = ["#ffcccb", "#b0e57c", "#b3e0ff", "#ffc0cb"];
+const colors = ["rgb(174 125 124)", "rgb(159 221 98)", "rgb(154 209 247)", "rgb(240 155 170)"];
 const styles = {
   main: {
     width: "20%",
     fontSize: "1.25rem",
-    fontWeight:"800",
-    color:"gray"
+    fontWeight:"700",
+    color:"white"
   },
   cardBody: {
     padding: 0,
@@ -41,9 +42,10 @@ const styles = {
 const Home = () => {
   return (
     <div style={{ padding: "10px 50px" }}>
-      <div>Dashboard</div>
+      <div className="font-link">Dashboard</div>
       <div>
         <div
+        className="font-link"
           style={{
             display: "flex",
             justifyContent: "space-around",
@@ -52,16 +54,18 @@ const Home = () => {
         >
           {cards.map((card, index) => (
             <Card
+            
               role="region"
               style={{ ...styles.main, backgroundColor: colors[index] }}
             >
-                {card.name}
+                <span className="font-link">{card.name}</span>
                 <div style={{ padding: "0" }}>
                   <p
+                  className="font-link"
                     style={{
-                      fontSize: "1.25rem",
-                      color: "gray",
-                      fontWeight: "900",
+                      fontSize: "1rem",
+                      color: "white",
+                      fontWeight: "600",
                       margin: 0,
                     }}
                   >

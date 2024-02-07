@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { Sidebar, Button } from "../primeReact";
 import LogInForm from "../components/Account/LoginForm";
+import SignUp from "../components/Account/SignUp";
 import { Link } from "react-router-dom";
-
 function Header({ closeSidebar }) {
   const [visible, setVisible] = useState(false);
 
@@ -28,7 +28,7 @@ function Header({ closeSidebar }) {
           onHide={handleSidebarClose}
           style={{ background: "#4c5b72", color: "white" }}
         >
-          <ul className="nav-ul">
+          <ul className="nav-ul font-link">
             <li>
               <Link to="/" onClick={handleSidebarClose}>
                 Home
@@ -65,7 +65,10 @@ function Header({ closeSidebar }) {
           onClick={() => setVisible(true)}
         />
       </div>
-      <LogInForm />
+      <div style={{ display: "flex" }}>
+        <LogInForm />
+        <SignUp />
+      </div>
     </div>
   );
 }

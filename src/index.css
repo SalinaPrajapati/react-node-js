@@ -7,6 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.font-link {
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Protest Riot', sans-serif
+}
+.font-family{
+  font-family: 'Suravaram', serif;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

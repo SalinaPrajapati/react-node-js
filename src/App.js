@@ -6,13 +6,11 @@ import Home from "./components/Home";
 import Contact from "./components/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
-
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const closeSidebar = () => {
-    setIsSidebarOpen(false);
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
